@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import { fetchData } from '../utils/fetchData';
 import HorizontalScrollbar from './HorizontalScrollbar';
-import api from '../utils/axios';
 const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState();
   const [bodyParts, setBodyParts] = useState([]);
-  console.log(api);
   useEffect(() => {
     const fetchExerciseData = async () => {
-      const {bodyparts} = await fetchData(`http://localhost:5000/bodyparts`);
+      const {bodyparts} = await fetchData(`${process.env.REACT_APP_DB_LINK}/bodyparts`);
       console.log(bodyparts);
       setBodyParts(['all', ...bodyparts]);
     }
@@ -19,7 +17,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const handleSearch = async () => {
     try {
       if (search) {
-        const exerciseData = await fetchData(`http://localhost:5000/exercises`);
+        const exerciseData = await fetchData(`${process.env.REACT_APP_DB_LINK}/exercises`);
         const searchedExercises = exerciseData.filter(
           (exercise) => {
             return exercise.name.toLowerCase().includes(search)

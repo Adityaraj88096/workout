@@ -18,9 +18,9 @@ window.scroll({ top: 1800, behavior:'smooth'})
     const fetchExercisesData = async () => {
       let exerciseData = [];
       if(bodyPart === 'all') {
-        exerciseData = await fetchData(`http://localhost:5000/exercises`);
+        exerciseData = await fetchData(`${process.env.REACT_APP_DB_LINK}/exercises`);
       } else {
-        exerciseData = await fetchData(`http://localhost:5000/exercises/bodypart/${bodyPart}`);
+        exerciseData = await fetchData(`${process.env.REACT_APP_DB_LINK}/exercises/bodypart/${bodyPart}`);
       }
       setExercises(exerciseData);
     }
