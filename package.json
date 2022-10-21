@@ -22,18 +22,16 @@
     "react-horizontal-scrolling-menu": "^3.2.0",
     "react-loader-spinner": "^6.0.0-0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "react-smart-scroller": "^1.1.22"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "api": "nodemon index.js",
+    "api": "nodemon server/index.js",
     "dev": "concurrently \"npm start\" \"npm run api\"",
     "prod": "concurrently --kill-others \"npm run build\" \"npm run api\""
-
   },
   "eslintConfig": {
     "extends": [
