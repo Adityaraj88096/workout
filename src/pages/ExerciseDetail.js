@@ -12,7 +12,7 @@ const ExerciseDetail = () => {
   useEffect(() => {
     const fetchExercisesData = async () => {
       const exercise = process.env.REACT_APP_DB_LINK
-      const exerciseDbUrl = fetchData(`${exercise}/exercises`);
+      // const exerciseDbUrl = fetchData(`${exercise}/exercises`);
       const exerciseDetailData = await fetchData(`${exercise}/exercise/${id}`);
       const targetMuscleExercisesData = await fetchData(`${exercise}/exercises/target/${exerciseDetailData.target}`);
       setTargetMuscleExercises(targetMuscleExercisesData);

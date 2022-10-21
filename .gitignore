@@ -5,8 +5,7 @@
 /.pnp
 .pnp.js
 .env
-/api/node_modules
-/api/.env
+/.vscode
 
 # testing
 /coverage
