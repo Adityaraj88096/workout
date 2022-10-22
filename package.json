@@ -29,9 +29,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "api": "nodemon server/index.js",
-    "dev": "concurrently \"npm start\" \"npm run api\"",
-    "prod": "concurrently --kill-others \"npm run build\" \"npm run api\""
+    "api": "node server/index.js",
+    "dev": "concurrently \"npm start\" && \"npm run api\"",
+    "prod": "npm run build & npm run api"
   },
   "eslintConfig": {
     "extends": [
